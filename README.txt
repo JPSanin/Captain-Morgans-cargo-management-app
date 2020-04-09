@@ -1,0 +1,7 @@
+﻿The following application is for a pirate who needed help managing the cargo he was shipping. His name is Captain Morgan, so my task was to make an app where he could keep track of his business. Captain Morgan has five clients, Shelby Company Ltd., Solomons Export, Changretta Exchange, Sabini Ships and Kimber Trading, they can all ship cargo on his boat but he has some restrictions. His boat can support a maximum weight of 28,000 kilograms and he has decided that to avoid losses the minimum he will transport are 2 cargos or 12,000 kilograms. Captain Morgan has divided the cargo in 3 categories and has fares per kilogram of the cargo, dangerous cargo costs 390, perishable cargo costs 250 and non perishable cargo costs 80. For sanitary reasons dangerous and perishable cargo cannot be on the boat at the same time. Captain Morgan also offers some special secret  discounts for loyal clients. 
+
+
+So, due to the Captain’s heavy workload it has become very difficult to keep track and manage the orders he has been receiving. Therefore he hired me to make him an app that helps him out.
+
+
+The only person using this app is Captain Morgan, it allows him to create trips, add cargo to trips while never not accomplishing his established conditions,unload his boat, view trip history and client information.

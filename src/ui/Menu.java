@@ -2,12 +2,6 @@ package ui;
 import model.*;
 import java.util.Scanner;
 
-/* 
-pulir diagrama de clases y objetos, HACER UN RESUMENSISKI JAVADOC CHIMBO Y chaooo guarde mañana le
-das duro papiriqui
-
- */
-
 public class Menu{
 	
 //Menu option constants
@@ -44,6 +38,10 @@ private Date[] dates;
 private Ship ship;
 private int client;
 
+ /** Constructor method for menu <br>
+	<b> pre: </b> <br>
+	<b> post: </b> Creates a menu and initializes five clients and a ship <br>
+	*/
 public Menu(){
 
 clients = new Client[SIZE];
@@ -68,10 +66,20 @@ ship= new Ship();
 client= 0;
 }
 
+/** Method for showing welcome message <br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints a welcome message<br>	
+	*/
 public void showWelcome(){
 System.out.println("\nWelcome Captain Morgan to your app, here you will be able to manage your clients' cargo \n");
 }
 
+/** Method for showing main menu<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints a welcome message<br>	
+	*/
 public void mainMenu(){
 System.out.println("Select the number that represents what you would like to do");
 System.out.println("1) Create a Trip");
@@ -80,6 +88,12 @@ System.out.println("3) View client information");
 System.out.println("4) Exit \n");
 }
 
+/** Method for reading a selection<br>
+		
+	<b> pre: </b>Previously showing the options <br>
+	<b> post: </b> Reads an a selected option and returns it <br>	
+	@return a int of the selected option ;
+	*/
 public int readOption(){
 Scanner sc = new Scanner(System.in);
 int option= sc.nextInt();
@@ -87,6 +101,12 @@ sc.nextLine();
 return option;
 }
 
+/** Method for reading a selection<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints all the trips' information <br>	
+
+	*/
 public void tripsHistory(){
 if(ship.getTrips().size()==0){
 System.out.println("\nPlease create and carry out a trip to view history, as of now since there are \n"+
@@ -100,6 +120,11 @@ System.out.println("Trip "+(i+1)+":"+ship.getTrips().get(i).printTripInfo());
 
 }
 
+/** Method for showing client selection method<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints client names so the can be selected<br>	
+	*/
 public void showClients(){
 // System.out.println("Please identify yourself, press the number that represents your enterprise\n");
 System.out.println("1) Shelby Company Ltd");
@@ -110,6 +135,11 @@ System.out.println("5) Kimber Trading");
 System.out.println("6) Exit \n");	
 }
 
+/** Method for showing client information<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints a selected clients' information<br>	
+	*/
 public void showClientInfo(){
 do{
 System.out.println("Select the client whose information you would like to view");
@@ -126,6 +156,11 @@ System.out.println(clients[client].printInfo());
 }
 }
 
+/** Method for showing the trips' conditions<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints the trips' conditions<br>	
+	*/
 public void tripConditions(){
 System.out.println("Now that you have a trip remember the conditions that you established to avoid losses and for sanity reasons\n");
 System.out.println("1) Dangerous cargo and Perishable cargo cannot travel on the same trip");
@@ -134,6 +169,12 @@ System.out.println("2) The ships maximum weight capacity is 28000 kilograms, the
 System.out.println("3) The trip must have at least two cargos or more than a total weight of 12000 kilograms to travel\n");
 }
 
+/** Method that excecutes the create trip submenu where the
+	user can creates a trip,adds cargo to it, views its' information and/or sends it<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> The user selects and realizes the operation<br>	
+	*/
 public void createTrip(){
 int option;
 Trip newTrip;
@@ -215,12 +256,22 @@ System.out.println("\n Please select a valid option");
 System.out.println("\nThe trip has been performed successfully\n");
 }
 
+/** Method for showing the menu when a trip is created<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints the trip menu<br>	
+	*/
 public void tripMenu(){
 System.out.println("1) Add cargo to trip");
 System.out.println("2) View trip information");
 System.out.println("3) Send trip");
 }
 
+/** Method for showing the cargos' conditions<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> Prints the cargos' conditions<br>	
+	*/
 public void cargoInfo(){
 System.out.println("\nYou have decided to add a cargo, before you proceed here is a reminder of the terms you established Captain Morgan\n");
 System.out.println("1) All cargos are stored in boxes");
@@ -232,6 +283,12 @@ System.out.println("6) The prices are per kilogram and depend on the type of car
 "Dangerous costs $390.00 \nPerishable costs $250.00 \nNon-Perishable costs $80.00\n");
 }
 
+/** Method for requesting a cargo<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> A cargo is created with the options the client selects<br>
+	@return a cargo made with the clients'  selected options
+	*/
 public Cargo requestCargo(){
 Scanner sc = new Scanner(System.in);
 Scanner sc2 = new Scanner(System.in);
@@ -293,6 +350,12 @@ break;
 return newCargo;	
 }
 
+/** Method that excecutes the main menu<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> The user can create trips, view client information and trips history<br>
+
+	*/
 public void doMenu(){
 int selection;
 
@@ -320,6 +383,12 @@ System.out.println("\nPlease select a valid option\n");
 System.out.println("The program has closed successfully, until next time Captain Morgan :)");
 }
 
+/** Method that initializes the program<br>
+		
+	<b> pre: </b> <br>
+	<b> post: </b> The user can use the program<br>
+
+	*/
 public void start(){
 showWelcome();
 doMenu();
